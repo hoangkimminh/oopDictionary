@@ -1,8 +1,12 @@
+/*
+This is class Word includes of word's properties and methods getter and setter
+ */
 public class Word {
 
     private String wordTarget;
     private String wordExplain;
 
+    //Constructor
     public Word() {
         wordTarget = "";
         wordExplain = "";
@@ -23,6 +27,7 @@ public class Word {
         return wordExplain;
     }
 
+    //setter
     public void setWordTarget(String wordTarget) {
         this.wordTarget = wordTarget;
     }
