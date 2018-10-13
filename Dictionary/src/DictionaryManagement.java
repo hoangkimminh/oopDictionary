@@ -31,6 +31,7 @@ public class DictionaryManagement {
         try {
             in = new BufferedReader(new FileReader("dictionaries.txt"));
             String line = null;
+            in.readLine();
             while ((line = in.readLine()) != null) {
                 String[] words = line.split("\t");
                 dictionary.add(words[0], words[1]);
