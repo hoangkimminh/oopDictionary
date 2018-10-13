@@ -40,15 +40,15 @@ public class DictionaryCommandline {
                 case 0: {
                     System.out.println(new String(new char[50]).replace("\0", "\n\r"));
                     System.out.print("\nDictionary: English - Vietnamese" +
-                                        "1. Show all words" +
-                                        "2. Find word" +
-                                        "3. Search" +
-                                        "4. Add word" +
-                                        "5. Change word meaning" +
-                                        "6. Delete word" +
-                                        "7. Export to file" +
-                                        "Input letter to exit program" +
-                                        "Your command: ");
+                                        "\n1. Show all words" +
+                                        "\n2. Find word" +
+                                        "\n3. Search" +
+                                        "\n4. Add word" +
+                                        "\n5. Change word meaning" +
+                                        "\n6. Delete word" +
+                                        "\n7. Export to file" +
+                                        "\nInput letter to exit program" +
+                                        "\nYour command: ");
                     if (scanner.hasNextInt()) {
                         command = scanner.nextInt();
                         System.out.println();
