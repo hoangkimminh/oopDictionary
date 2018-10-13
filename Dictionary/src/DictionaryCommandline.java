@@ -39,16 +39,16 @@ public class DictionaryCommandline {
             switch (command) {
                 case 0: {
                     System.out.println(new String(new char[50]).replace("\0", "\n\r"));
-                    System.out.println("\nDictionary: English - Vietnamese");
-                    System.out.println("1. Show all words");
-                    System.out.println("2. Find word");
-                    System.out.println("3. Search");
-                    System.out.println("4. Add word");
-                    System.out.println("5. Change word meaning");
-                    System.out.println("6. Delete word");
-                    System.out.println("7. Export to file");
-                    System.out.println("Input letter to exit program");
-                    System.out.print("Your command: ");
+                    System.out.print("\nDictionary: English - Vietnamese" +
+                                        "1. Show all words" +
+                                        "2. Find word" +
+                                        "3. Search" +
+                                        "4. Add word" +
+                                        "5. Change word meaning" +
+                                        "6. Delete word" +
+                                        "7. Export to file" +
+                                        "Input letter to exit program" +
+                                        "Your command: ");
                     if (scanner.hasNextInt()) {
                         command = scanner.nextInt();
                         System.out.println();
@@ -61,6 +61,7 @@ public class DictionaryCommandline {
                 case 1: {
                     //Show all words
                     cmd.showAllWords();
+                    System.out.print("Press enter to continue");
                     scanner.nextLine();
                     scanner.nextLine();
                     command = 0;
@@ -69,6 +70,7 @@ public class DictionaryCommandline {
                 case 2: {
                     //Look up a word
                     cmd.dictionaryManagement.dictionaryLookup();
+                    System.out.print("Press enter to continue");
                     scanner.nextLine();
                     scanner.nextLine();
                     command = 0;
@@ -77,6 +79,7 @@ public class DictionaryCommandline {
                 case 3: {
                     //Search list of words contains a string
                     cmd.dictionarySearcher();
+                    System.out.print("Press enter to continue");
                     scanner.nextLine();
                     scanner.nextLine();
                     command = 0;
@@ -85,6 +88,7 @@ public class DictionaryCommandline {
                 case 4: {
                     //Add a word to the dictionary
                     cmd.dictionaryManagement.addWord();
+                    System.out.print("Press enter to continue");
                     scanner.nextLine();
                     scanner.nextLine();
                     command = 0;
@@ -93,6 +97,7 @@ public class DictionaryCommandline {
                 case 5: {
                     //Change a word'meaning
                     cmd.dictionaryManagement.changeWordMeaning();
+                    System.out.print("Press enter to continue");
                     scanner.nextLine();
                     scanner.nextLine();
                     command = 0;
@@ -101,6 +106,7 @@ public class DictionaryCommandline {
                 case 6: {
                     //Delete a word from dictionary
                     cmd.dictionaryManagement.deleteWord();
+                    System.out.print("Press enter to continue");
                     scanner.nextLine();
                     scanner.nextLine();
                     command = 0;
@@ -109,6 +115,7 @@ public class DictionaryCommandline {
                 case 7: {
                     //Export the dictionary to a .txt file
                     cmd.dictionaryManagement.dictionaryExportToFile();
+                    System.out.print("Press enter to continue");
                     scanner.nextLine();
                     scanner.nextLine();
                     command = 0;
