@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Dictionary:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Dictionary_jar</output-path>
+    <root id="archive" name="Dictionary.jar">
+      <element id="module-output" name="Dictionary" />
+      <element id="file-copy" path="$PROJECT_DIR$/dictionaries.txt" />
+    </root>
+  </artifact>
+</component>
