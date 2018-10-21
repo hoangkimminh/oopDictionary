@@ -1,0 +1,73 @@
+#background {
+    /*-fx-background-color: #edf0f4;*/
+    -fx-background-image: url("img/lightThemeBackground.jpg");
+}
+
+#side-bar {
+    -fx-background-color: #9bb6d5;
+    -fx-background-radius:  0px 20px 0 0;
+}
+
+#left-box {
+    -fx-background-color: #cadcf0;
+}
+
+.tool-box {
+    -fx-background-color: #dfe2e5;
+}
+
+
+.side-bar-button:hover {
+    -fx-background-color: #dfe2e5;
+}
+
+#add-button {
+    -fx-background-radius: 0px 20px 0 0;
+}
+
+.sidebar-icon {
+    -fx-fill: #000000;
+}
+
+.theme-button {
+    -fx-text-fill: #000000;
+}
+
+.tooltip {
+    -fx-text-fill: #ffffff;
+}
+
+Text {
+    -fx-fill: #000000;
+}
+
+Label {
+    -fx-text-fill: #000000;
+}
+
+#logo-text {
+    -fx-font-family: "SVN-A Love Of Thunder";
+    -fx-font-size: 45px;
+}
+
+#text-area-explain {
+    -fx-background-color: transparent;
+}
+
+#text-area-explain .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+#text-area-explain .scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+#text-area-explain .scroll-pane .content {
+    -fx-background-color: transparent;
+}
+
+#text-area-explain .scroll-bar {
+    -fx-opacity: 0;
+}
+
+

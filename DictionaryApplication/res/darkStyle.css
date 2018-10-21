@@ -1,0 +1,96 @@
+#background {
+    /*-fx-background-color: #404040;*/
+    -fx-background-image: url("img/darkThemeBackground.jpg");
+    -fx-fill: #cdcdcd;
+}
+
+#side-bar {
+    -fx-background-color: #040404;
+    -fx-background-radius:  0 20 0 0;
+}
+
+#left-box {
+    -fx-background-color: #343434;
+    -fx-opacity: 80%;
+}
+
+.tool-box {
+    -fx-background-color: #242424;
+}
+
+
+
+.side-bar-button:hover {
+    -fx-background-color: #242424;
+}
+
+#add-button {
+    -fx-background-radius: 0 20 0 0;
+}
+
+.sidebar-icon {
+    -fx-fill: #ffffff;
+}
+
+.theme-button {
+    -fx-text-fill: #cdcdcd;
+}
+
+Text {
+    -fx-fill: white;
+}
+
+JFXTextField {
+    -fx-text-fill: #e6e6e6;
+}
+
+Label {
+    -fx-text-fill: #cdcdcd;
+}
+
+.control-button {
+    -fx-fill: #cdcdcd;
+}
+
+#logo-text {
+    -fx-font-family: "SVN-A Love Of Thunder" ;
+    -fx-font-size: 45px;
+}
+
+.tooltip {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #000000;
+}
+
+#listView {
+    -fx-background-color: #cdcdcd;
+}
+
+/*Set the text area transparent*/
+#text-area-explain {
+    -fx-background-color: transparent;
+}
+
+#text-area-explain .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+#text-area-explain .scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+#text-area-explain .scroll-pane .content {
+    -fx-background-color: transparent;
+}
+
+#text-area-explain .scroll-bar {
+    -fx-opacity: 0;
+}
+
+#text-area-explain {
+    -fx-text-fill: #cdcdcd;
+}
+
+OctIconView {
+    -fx-fill: #cdcdcd;
+}

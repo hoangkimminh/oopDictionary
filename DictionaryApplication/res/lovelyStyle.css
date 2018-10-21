@@ -1,0 +1,84 @@
+#background {
+    /*-fx-background-color: #fee7e6;*/
+    -fx-fill: #cdcdcd;
+    -fx-background-image: url("img/lovelyThemeBackground.jpg");
+}
+
+#side-bar {
+    -fx-background-color: #ff9893;
+    -fx-background-radius:  0 20 0 0;
+}
+
+#left-box {
+    -fx-background-color: #ffcdcb;
+}
+
+.tool-box {
+    -fx-background-color: #ffdeec;
+}
+
+.side-bar-button:hover {
+    -fx-background-color: #ffcdcb;
+}
+
+#add-button {
+    -fx-background-radius: 0 20 0 0;
+}
+
+Text {
+    -fx-fill: #91367a;
+}
+
+Label {
+    -fx-text-fill: #91367a;
+}
+
+#listView {
+    -fx-border-color: #ff48d2;
+}
+
+#text-area-explain {
+    -fx-background-color: transparent;
+}
+
+#text-area-explain .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+#text-area-explain .scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+#text-area-explain .scroll-pane .content {
+    -fx-background-color: transparent;
+}
+
+#text-area-explain .scroll-bar {
+    -fx-opacity: 0;
+}
+
+.sidebar-icon {
+    -fx-fill: #ffffff;
+}
+
+.theme-button {
+    -fx-text-fill: #91367a;
+}
+
+#logo-text {
+    -fx-font-family: "SVN-Poky's";
+    -fx-font-size: 45px;
+}
+
+.control-button {
+    -fx-fill: #91367a;
+}
+
+Tooltip {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #000000;
+}
+
+#text-area-explain {
+    -fx-text-fill: #91367a;
+}

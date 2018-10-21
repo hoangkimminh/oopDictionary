@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.octicons.OctIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="background" fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Controller">
+    <children>
+        <AnchorPane layoutX="288.0" layoutY="25.0" prefHeight="455.0" prefWidth="432.0">
+            <children>
+                <Label id="label-word-target" fx:id="wordTargetLable" layoutX="45.0" layoutY="20.0" prefHeight="45.0" prefWidth="380.0" text="Dictionary">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font></Label>
+            <JFXButton layoutX="10.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#playSound">
+               <graphic>
+                  <FontAwesomeIconView glyphName="VOLUME_UP" size="20" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="control-button" />
+               </graphic></JFXButton>
+            <TextArea id="text-area-explain" fx:id="wordExplainLable" editable="false" layoutX="20.0" layoutY="75.0" prefHeight="360.0" prefWidth="392.0" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font></TextArea>
+            </children>
+        </AnchorPane>
+        <AnchorPane id="left-box" prefHeight="480.0" prefWidth="288.0">
+            <children>
+                <JFXTextField fx:id="searchField" layoutX="80.0" layoutY="130.0" onAction="#chooseFirstWord" onKeyReleased="#search" prefHeight="25.0" prefWidth="162.0" promptText="Nhập từ tiếng Anh" />
+                <JFXListView id="listView" fx:id="listView" layoutX="70.0" layoutY="170.0" onKeyReleased="#printExplainWord" onMousePressed="#printExplainWord" prefHeight="285.0" prefWidth="188.0" />
+                <AnchorPane id="logo-box" prefHeight="120.0" prefWidth="288.0">
+               <children>
+                  <Text id="logo-text" fx:id="logoText" fill="#2560b2" layoutX="13.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DICTIONARY">
+                     <font>
+                        <Font size="41.0" />
+                     </font></Text>
+               </children></AnchorPane>
+            <AnchorPane id="tool-box" fx:id="deleteBox" layoutX="-288.0" layoutY="120.0" prefHeight="360.0" prefWidth="288.0" styleClass="tool-box">
+               <children>
+                  <JFXTextField fx:id="deleteTextField" layoutX="55.0" layoutY="85.0" onAction="#deleteWord" prefHeight="31.0" prefWidth="202.0" promptText="Nhập từ" />
+                  <Text fx:id="deleteMessageText" layoutX="64.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="182.0">
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="55.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Xóa từ">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="55.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Từ cần xóa">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <JFXButton layoutX="248.0" mnemonicParsing="false" onAction="#hideAllToolBox" prefHeight="30.0" prefWidth="40.0">
+                     <graphic>
+                        <OctIconView glyphName="X" size="20" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="20.0" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Đóng" />
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton layoutX="208.0" mnemonicParsing="false" onAction="#deleteWord" onMouseClicked="#addWord" prefHeight="30.0" prefWidth="40.0">
+                     <graphic>
+                        <OctIconView glyphName="CHECK" size="20" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="20.0" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Xác nhận" />
+                     </tooltip>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="editBox" layoutX="-288.0" layoutY="120.0" prefHeight="360.0" prefWidth="288.0" styleClass="tool-box">
+               <children>
+                  <JFXTextField fx:id="editWordTargetTextField" layoutX="55.0" layoutY="85.0" onAction="#editWord" prefHeight="31.0" prefWidth="202.0" promptText="Nhập từ" />
+                  <JFXTextField fx:id="editWordExplainTextField" layoutX="55.0" layoutY="145.0" onAction="#editWord" prefHeight="31.0" prefWidth="202.0" />
+                  <JFXTextField fx:id="editTypeTextField" layoutX="55.0" layoutY="205.0" onAction="#editWord" prefHeight="31.0" prefWidth="202.0" />
+                  <JFXTextField fx:id="editPronounceTextField" layoutX="55.0" layoutY="265.0" onAction="#editWord" prefHeight="31.0" prefWidth="202.0" />
+                  <Text layoutX="55.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sửa từ">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="55.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Từ muốn sửa">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="55.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập nghĩa tiếng Việt">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="55.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Từ loại">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="55.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cách phát âm">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Text>
+                  <JFXButton layoutX="248.0" mnemonicParsing="false" onAction="#hideAllToolBox" prefHeight="30.0" prefWidth="40.0">
+                     <graphic>
+                        <OctIconView glyphName="X" size="20" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="20.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="208.0" mnemonicParsing="false" onAction="#editWord" onMouseClicked="#addWord" prefHeight="30.0" prefWidth="40.0">
+                     <graphic>
+                        <OctIconView glyphName="CHECK" size="20" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="20.0" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Xác nhận" />
+                     </tooltip>
+                  </JFXButton>
+                  <Text fx:id="editMessageText" layoutX="64.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="220.0">
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+                <AnchorPane fx:id="addBox" layoutX="-288.0" layoutY="120.0" prefHeight="360.0" prefWidth="288.0" styleClass="tool-box">
+                    <children>
+                        <JFXTextField fx:id="addWordTargetTextField" layoutX="55.0" layoutY="84.0" prefHeight="31.0" prefWidth="202.0" promptText="Nhập một từ tiếng Anh" />
+                        <JFXTextField fx:id="addWordExplainTextField" layoutX="55.0" layoutY="149.0" onAction="#addWord" prefHeight="31.0" prefWidth="202.0" />
+                        <Text fx:id="addMessageText" layoutX="64.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="182.0">
+                            <font>
+                                <Font name="System Italic" size="15.0" />
+                            </font>
+                        </Text>
+                        <Text layoutX="55.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thêm từ mới">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Text>
+                        <Text layoutX="55.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Từ mới">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Text>
+                        <Text layoutX="55.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nhập nghĩa tiếng Việt">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                        </Text>
+                        <JFXButton layoutX="248.0" mnemonicParsing="false" onAction="#hideAllToolBox" prefHeight="30.0" prefWidth="40.0">
+                            <graphic>
+                                <OctIconView glyphName="X" size="20" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="20.0" />
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton layoutX="208.0" mnemonicParsing="false" onMouseClicked="#addWord" prefHeight="30.0" prefWidth="40.0">
+                            <graphic>
+                                <OctIconView glyphName="CHECK" size="20" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="20.0" />
+                            </graphic>
+                            <tooltip>
+                                <Tooltip text="Xác nhận" />
+                            </tooltip>
+                        </JFXButton>
+                    </children>
+                </AnchorPane>
+            <AnchorPane fx:id="translateBox" layoutX="-288.0" layoutY="120.0" prefHeight="360.0" prefWidth="288.0" styleClass="tool-box">
+               <children>
+                  <Text layoutX="55.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dịch online">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <JFXButton layoutX="248.0" mnemonicParsing="false" onAction="#hideAllToolBox" prefHeight="30.0" prefWidth="40.0">
+                     <graphic>
+                        <OctIconView glyphName="X" size="20" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="20.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton layoutX="208.0" mnemonicParsing="false" onAction="#translateParagraph" onMouseClicked="#addWord" prefHeight="30.0" prefWidth="40.0">
+                     <graphic>
+                        <OctIconView glyphName="CHECK" size="20" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="20.0" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Xác nhận" />
+                     </tooltip>
+                  </JFXButton>
+                  <TextArea fx:id="translateArea" layoutX="55.0" layoutY="60.0" prefHeight="280.0" prefWidth="218.0" wrapText="true" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="settingBox" layoutX="-288.0" layoutY="120.0" prefHeight="360.0" prefWidth="288.0" styleClass="tool-box">
+               <children>
+                  <Text layoutX="55.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chọn giao diện">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <JFXRadioButton fx:id="lightButton" layoutX="65.0" layoutY="90.0" mnemonicParsing="false" onAction="#setLightTheme" styleClass="theme-button" text="Light" />
+                  <JFXRadioButton fx:id="darkButton" layoutX="65.0" layoutY="120.0" mnemonicParsing="false" onAction="#setDarkTheme" styleClass="theme-button" text="Dark" />
+                  <JFXRadioButton fx:id="lovelyButton" layoutX="65.0" layoutY="150.0" mnemonicParsing="false" onAction="#setLovelyTheme" styleClass="theme-button" text="Lovely" />
+                  <JFXButton layoutX="248.0" mnemonicParsing="false" onAction="#hideAllToolBox" onMouseClicked="#addWord" prefHeight="30.0" prefWidth="40.0">
+                     <graphic>
+                        <OctIconView glyphName="X" size="20" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="20.0" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Đóng" />
+                     </tooltip>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+                <AnchorPane layoutY="120.0" prefHeight="360.0" prefWidth="40.0">
+                    <children>
+                        <VBox id="side-bar" prefHeight="360.0" prefWidth="40.0">
+                            <children>
+                                <JFXButton id="add-button" fx:id="addButton" mnemonicParsing="false" onAction="#showAddBox" prefHeight="40.0" prefWidth="24.0" styleClass="side-bar-button">
+                                    <graphic>
+                                        <OctIconView glyphName="DIFF" size="18" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sidebar-icon" textAlignment="CENTER" wrappingWidth="24.0" />
+                                    </graphic>
+                                    <tooltip>
+                                        <Tooltip id="tool-tip" text="Thêm từ mới" />
+                                    </tooltip>
+                                </JFXButton>
+                                <JFXButton fx:id="editButton" mnemonicParsing="false" onAction="#showEditBox" prefHeight="40.0" prefWidth="24.0" styleClass="side-bar-button">
+                                    <graphic>
+                                        <OctIconView glyphName="PENCIL" size="18" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sidebar-icon" textAlignment="CENTER" wrappingWidth="24.0" />
+                                    </graphic>
+                                    <tooltip>
+                                        <Tooltip id="tool-tip" text="Sửa từ" />
+                                    </tooltip>
+                                </JFXButton>
+                                <JFXButton fx:id="deleteButton" mnemonicParsing="false" onAction="#showDeleteBox" prefHeight="40.0" prefWidth="24.0" styleClass="side-bar-button">
+                                    <graphic>
+                                        <OctIconView glyphName="TRASHCAN" size="18" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sidebar-icon" text="" textAlignment="CENTER" wrappingWidth="24.0" />
+                                    </graphic>
+                                    <tooltip>
+                                        <Tooltip id="tool-tip" text="Xoá từ" />
+                                    </tooltip>
+                                </JFXButton>
+                                <JFXButton fx:id="translateButton" mnemonicParsing="false" onAction="#showTranslateBox" prefHeight="40.0" prefWidth="56.0" styleClass="side-bar-button">
+                                    <tooltip>
+                                        <Tooltip id="tool-tip" text="Dịch online" />
+                                    </tooltip>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="LANGUAGE" size="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sidebar-icon" />
+                           </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="settingButton" mnemonicParsing="false" onAction="#showSettingBox" prefHeight="40.0" prefWidth="24.0" styleClass="side-bar-button">
+                                    <graphic>
+                                        <OctIconView glyphName="GEAR" size="18" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sidebar-icon" text="" textAlignment="CENTER" wrappingWidth="24.0" />
+                                    </graphic>
+                                    <tooltip>
+                                        <Tooltip id="tool-tip" text="Cài đặt" />
+                                    </tooltip>
+                                </JFXButton>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="240.0" prefHeight="25.0" prefWidth="480.0">
+            <children>
+                <FontAwesomeIconView glyphName="TIMES" layoutX="459.0" layoutY="20.0" onMouseClicked="#closeWindow" size="20" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="control-button" />
+                <FontAwesomeIconView glyphName="MINUS" layoutX="439.0" layoutY="19.0" onMouseClicked="#hideWindow" size="16" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="control-button" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
